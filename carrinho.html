@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrinho – Mercado Família Gama</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo-nav" href="index.html">
+      <span class="cart-icon">🛒</span>
+      <div><span>GAMA</span><small>Mercado Família</small></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="historia.html">Nossa História</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+      <li><a class="btn-carrinho-nav ativo" href="carrinho.html">🛒 Carrinho <span class="cart-count-badge" id="cartBadge">0</span></a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<section class="carrinho-hero">
+  <h1>🛒 MEU CARRINHO</h1>
+  <p>Revise seus produtos e calcule o frete antes de finalizar</p>
+</section>
+
+<div class="carrinho-layout">
+
+  <div class="carrinho-lista">
+    <h2>ITENS SELECIONADOS</h2>
+    <div id="listaItens"></div>
+    <div class="carrinho-acoes" id="carrinhoAcoes" style="display:none;">
+      <button class="btn-limpar" onclick="limparCarrinho()">🗑️ Limpar Carrinho</button>
+      <a class="btn-continuar" href="produtos.html">← Continuar Comprando</a>
+    </div>
+  </div>
+
+  <div>
+    <!-- CALCULADORA DE FRETE -->
+    <div class="frete-card">
+      <h3>🚚 Calcular Frete</h3>
+      <div class="frete-input-row">
+        <input type="text" id="freteEndereco" placeholder="Seu endereço completo + cidade..." onkeydown="if(event.key==='Enter') calcularFrete()"/>
+        <button class="btn-calcular-frete" id="btnCalcular" onclick="calcularFrete()">📍 Calcular</button>
+      </div>
+      <div id="freteResultado" class="frete-resultado"></div>
+</div>
+
+    <!-- RESUMO -->
+    <div class="resumo-card">
+      <h2>RESUMO DO PEDIDO</h2>
+      <div class="resumo-linha"><span class="label">Subtotal</span><span class="valor" id="resumoSubtotal">R$ 0,00</span></div>
+      <div class="resumo-linha"><span class="label">Entrega</span><span class="valor" id="resumoFrete" style="color:#888;">Calcule acima</span></div>
+      <hr class="resumo-divider">
+      <div class="resumo-linha destaque"><span class="label">Total</span><span class="valor" id="resumoTotal">R$ 0,00</span></div>
+      <button class="btn-finalizar" id="btnFinalizar" onclick="finalizarPedido()" disabled>✅ Finalizar Pedido</button>
+      <a class="btn-continuar" href="produtos.html" style="width:100%;justify-content:center;padding:11px 22px;border-radius:10px;text-align:center;display:flex;">← Continuar Comprando</a>
+      <p class="resumo-info">🔒 Pedido seguro · 💳 Várias formas de pagamento</p>
+    </div>
+  </div>
+</div>
+
+<div id="modalSucesso">
+  <div class="modal-box">
+    <div class="modal-icon">🎉</div>
+    <h3>PEDIDO RECEBIDO!</h3>
+    <p>Obrigado pela sua compra no <strong>Mercado Família Gama</strong>!<br>Em breve entraremos em contato para confirmar e agendar a entrega.</p>
+    <a class="modal-btn" href="index.html">Voltar ao Início</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>🛒 MERCADO GAMA</h3>
+      <p>Dia a Dia Com Você!<br>Qualidade e carinho em cada produto. Servindo Taboão da Serra com orgulho e dedicação.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">Nossa História</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categorias</h4>
+      <ul>
+        <li><a href="produtos.html">Açougue</a></li>
+        <li><a href="produtos.html">Hortifruti</a></li>
+        <li><a href="produtos.html">Padaria</a></li>
+        <li><a href="produtos.html">Bebidas</a></li>
+        <li><a href="produtos.html">Limpeza</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mercado Família Gama – Taboão da Serra/SP</span>
+    <div class="social-links">
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="WhatsApp">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
