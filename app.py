@@ -1,15 +1,3 @@
-"""
-==========================================================
-    MERCADO FAMÍLIA GAMA — Back-end Python (Protótipo)
-    Stack: Flask + SQLite (via módulo sqlite3 nativo)
-
-    Para rodar:
-    pip install flask
-    python app.py
-    Acesse: http://localhost:5000
-==========================================================
-"""
-
 from flask import Flask, request, jsonify, session, g
 import sqlite3
 import hashlib
@@ -19,16 +7,9 @@ import json
 from datetime import datetime, timedelta
 from functools import wraps
 
-# ──────────────────────────────────────────────
-#  CONFIGURAÇÃO
-# ──────────────────────────────────────────────
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "gama-dev-secret-2025")  # Troque em produção!
 DATABASE = "mercado_gama.db"
-
-# ──────────────────────────────────────────────
-#  BANCO DE DADOS — conexão e inicialização
-# ──────────────────────────────────────────────
 
 def get_db():
     """Retorna conexão com o banco para o contexto atual da requisição."""
@@ -53,9 +34,6 @@ def init_db():
     db.close()
     print("✅ Banco de dados inicializado.")
 
-# ──────────────────────────────────────────────
-#  SCHEMA — definição das tabelas
-# ──────────────────────────────────────────────
 SCHEMA_SQL = """
 -- Tabela de Usuários
 CREATE TABLE IF NOT EXISTS usuarios (
@@ -139,10 +117,6 @@ CREATE TABLE IF NOT EXISTS notificacoes_lidas (
 );
 """
 
-# ──────────────────────────────────────────────
-#  HELPERS — senhas e autenticação
-# ──────────────────────────────────────────────
-
 def hash_senha(senha: str) -> str:
     """Gera hash seguro da senha usando PBKDF2-HMAC-SHA256."""
     salt = os.urandom(16)
@@ -174,10 +148,6 @@ def usuario_logado():
         return None
     row = get_db().execute("SELECT * FROM usuarios WHERE id = ?", (uid,)).fetchone()
     return dict(row) if row else None
-
-# ──────────────────────────────────────────────
-#  HELPERS — recomendações simples
-# ──────────────────────────────────────────────
 
 def gerar_recomendacoes(usuario_id: int, limite: int = 5) -> list:
     """
