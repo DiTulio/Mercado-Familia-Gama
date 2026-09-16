@@ -1,176 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato – Mercado Família Gama</title>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <nav>
-    <a class="logo-nav" href="index.html">
-      <span class="cart-icon">🛒</span>
-      <div>
-        <span>GAMA</span>
-        <small>Mercado Família</small>
-      </div>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="historia.html">Nossa História</a></li>
-      <li><a href="produtos.html">Produtos</a></li>
-      <li><a href="contato.html" class="active">Contato</a></li>
-      <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
-      <li>
-        <a class="btn-carrinho-nav" href="carrinho.html">
-          🛒 Carrinho <span class="cart-count-badge" id="cartBadge">0</span>
-        </a>
-      </li>
-    </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="contato-hero">
-  <h1>FALE <span>CONOSCO</span></h1>
-  <p>Estamos sempre prontos para te atender com carinho</p>
-</section>
-
-<!-- CONTEÚDO -->
-<section class="section">
-  <div class="contato-layout">
-
-    <!-- INFO -->
-    <div class="contato-info">
-      <h3>INFORMAÇÕES</h3>
-      <div class="info-item">
-        <div class="info-icon">📍</div>
-        <div class="info-text">
-          <strong>Endereço</strong>
-          <span>Taboão da Serra – SP</span>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a class="logo-nav" href="../index.html">
+        <span class="cart-icon">🛒</span>
+        <div>
+          <span>GAMA</span>
+          <small>Mercado Família</small>
         </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">📞</div>
-        <div class="info-text">
-          <strong>Telefone</strong>
-          <span>(11) 0000-0000</span>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">💬</div>
-        <div class="info-text">
-          <strong>WhatsApp</strong>
-          <span>(11) 9 0000-0000</span>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon">📧</div>
-        <div class="info-text">
-          <strong>E-mail</strong>
-          <span>contato@mercadogama.com.br</span>
-        </div>
-      </div>
-
-      <div class="horarios">
-        <h4>⏰ Horário de Funcionamento</h4>
-        <p>Segunda a Sexta <span>07h – 21h</span></p>
-        <p>Sábado <span>07h – 20h</span></p>
-        <p>Domingo e Feriados <span>08h – 14h</span></p>
-      </div>
-
-      <div class="mapa-placeholder">
-        <div class="map-icon">🗺️</div>
-        <p><strong>Mercado Família Gama</strong><br>Taboão da Serra – SP</p>
-      </div>
-    </div>
-
-    <!-- FORMULÁRIO -->
-    <div class="form-card">
-      <h3>ENVIE UMA MENSAGEM</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Nome *</label>
-          <input type="text" id="nome" placeholder="Seu nome completo"/>
-        </div>
-        <div class="form-group">
-          <label>Telefone</label>
-          <input type="tel" id="telefone" placeholder="(11) 9 0000-0000"/>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>E-mail *</label>
-        <input type="email" id="email" placeholder="seuemail@email.com"/>
-      </div>
-      <div class="form-group">
-        <label>Assunto *</label>
-        <select id="assunto">
-          <option value="">Selecione um assunto...</option>
-          <option>Dúvida sobre produtos</option>
-          <option>Informações de delivery</option>
-          <option>Elogios</option>
-          <option>Sugestões</option>
-          <option>Reclamação</option>
-          <option>Outros</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Mensagem *</label>
-        <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
-      </div>
-      <button class="btn-submit" onclick="enviarFormulario()">📩 Enviar Mensagem</button>
-      <div class="sucesso-msg" id="sucessoMsg">
-        ✅ Mensagem enviada com sucesso! Retornaremos em breve.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>🛒 MERCADO GAMA</h3>
-      <p>Dia a Dia Com Você!<br>Qualidade e carinho em cada produto. Servindo Taboão da Serra com orgulho e dedicação.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Início</a></li>
         <li><a href="historia.html">Nossa História</a></li>
         <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
         <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+        <li>
+          <a class="btn-carrinho-nav" href="carrinho.html">
+            🛒 Carrinho <span class="cart-count-badge" id="cartBadge">0</span>
+          </a>
+        </li>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Categorias</h4>
-      <ul>
-        <li><a href="produtos.html">Açougue</a></li>
-        <li><a href="produtos.html">Hortifruti</a></li>
-        <li><a href="produtos.html">Padaria</a></li>
-        <li><a href="produtos.html">Bebidas</a></li>
-        <li><a href="produtos.html">Limpeza</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Mercado Família Gama – Taboão da Serra/SP</span>
-    <div class="social-links">
-      <a href="#" title="Instagram">📸</a>
-      <a href="#" title="Facebook">📘</a>
-      <a href="#" title="WhatsApp">💬</a>
-    </div>
-  </div>
-</footer>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
 
-<script src="script.js"></script>
+  <!-- HERO -->
+  <section class="contato-hero">
+    <h1>FALE <span>CONOSCO</span></h1>
+    <p>Estamos sempre prontos para te atender com carinho</p>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section class="section">
+    <div class="contato-layout">
+
+      <!-- INFO -->
+      <div class="contato-info">
+        <h3>INFORMAÇÕES</h3>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <strong>Endereço</strong>
+            <span>Taboão da Serra – SP</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <strong>Telefone</strong>
+            <span>(11) 0000-0000</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">💬</div>
+          <div class="info-text">
+            <strong>WhatsApp</strong>
+            <span>(11) 9 0000-0000</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📧</div>
+          <div class="info-text">
+            <strong>E-mail</strong>
+            <span>contato@mercadogama.com.br</span>
+          </div>
+        </div>
+
+        <div class="horarios">
+          <h4>⏰ Horário de Funcionamento</h4>
+          <p>Segunda a Sexta <span>07h – 21h</span></p>
+          <p>Sábado <span>07h – 20h</span></p>
+          <p>Domingo e Feriados <span>08h – 14h</span></p>
+        </div>
+
+        <div class="mapa-placeholder">
+          <div class="map-icon">🗺️</div>
+          <p><strong>Mercado Família Gama</strong><br>Taboão da Serra – SP</p>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <div class="form-card">
+        <h3>ENVIE UMA MENSAGEM</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome *</label>
+            <input type="text" id="nome" placeholder="Seu nome completo" />
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="tel" id="telefone" placeholder="(11) 9 0000-0000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail *</label>
+          <input type="email" id="email" placeholder="seuemail@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Assunto *</label>
+          <select id="assunto">
+            <option value="">Selecione um assunto...</option>
+            <option>Dúvida sobre produtos</option>
+            <option>Informações de delivery</option>
+            <option>Elogios</option>
+            <option>Sugestões</option>
+            <option>Reclamação</option>
+            <option>Outros</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensagem *</label>
+          <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="enviarFormulario()">📩 Enviar Mensagem</button>
+        <div class="sucesso-msg" id="sucessoMsg">
+          ✅ Mensagem enviada com sucesso! Retornaremos em breve.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>🛒 MERCADO GAMA</h3>
+        <p>Dia a Dia Com Você!<br>Qualidade e carinho em cada produto. Servindo Taboão da Serra com orgulho e dedicação.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="historia.html">Nossa História</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html">Açougue</a></li>
+          <li><a href="produtos.html">Hortifruti</a></li>
+          <li><a href="produtos.html">Padaria</a></li>
+          <li><a href="produtos.html">Bebidas</a></li>
+          <li><a href="produtos.html">Limpeza</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Mercado Família Gama – Taboão da Serra/SP</span>
+      <div class="social-links">
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="WhatsApp">💬</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
 </body>
+
 </html>
