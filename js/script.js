@@ -3,7 +3,7 @@
 /* ══════════════════════════════════════════════
    CARRINHO (localStorage)
 ══════════════════════════════════════════════ */
-const CART_KEY  = 'gama_carrinho';
+const CART_KEY = 'gama_carrinho';
 const FRETE_KEY = 'gama_frete';
 
 function lerCarrinho() {
@@ -36,12 +36,12 @@ function addCarrinho(btn) {
   const card = btn.closest('.produto-card');
   if (!card) return;
 
-  const id      = card.dataset.id;
-  const nome    = card.dataset.nome;
-  const preco   = parseFloat(card.dataset.preco);
+  const id = card.dataset.id;
+  const nome = card.dataset.nome;
+  const preco = parseFloat(card.dataset.preco);
   const unidade = card.dataset.unidade || '/un';
-  const marca   = card.querySelector('.produto-marca')?.textContent || '';
-  const emoji   = card.querySelector('.produto-thumb')?.textContent.trim() || '🛒';
+  const marca = card.querySelector('.produto-marca')?.textContent || '';
+  const emoji = card.querySelector('.produto-thumb')?.textContent.trim() || '🛒';
 
   let itens = lerCarrinho();
   const idx = itens.findIndex(i => i.id === id);
@@ -77,32 +77,32 @@ function fmt(v) {
 }
 
 function atualizarResumo() {
-  const itens    = lerCarrinho();
+  const itens = lerCarrinho();
   const subtotal = itens.reduce((s, i) => s + i.preco * i.qty, 0);
 
-  const elSub   = document.getElementById('resumoSubtotal');
+  const elSub = document.getElementById('resumoSubtotal');
   const elFrete = document.getElementById('resumoFrete');
   const elTotal = document.getElementById('resumoTotal');
-  const btnFin  = document.getElementById('btnFinalizar');
+  const btnFin = document.getElementById('btnFinalizar');
 
   if (elSub) elSub.textContent = fmt(subtotal);
 
   // Recupera frete já calculado (se houver)
   const freteInfo = lerFreteCalc();
-  let freteTxt  = 'Calcule acima';
-  let freteVal  = 0;
+  let freteTxt = 'Calcule acima';
+  let freteVal = 0;
   let freteColor = '#888';
 
   if (freteInfo !== null) {
     if (freteInfo === 0) {
-      freteTxt  = 'Grátis 🎉';
+      freteTxt = 'Grátis 🎉';
       freteColor = 'var(--verde)';
     } else if (freteInfo === -1) {
-      freteTxt  = 'Sob consulta';
+      freteTxt = 'Sob consulta';
       freteColor = 'var(--vermelho)';
     } else {
-      freteVal  = freteInfo;
-      freteTxt  = fmt(freteInfo);
+      freteVal = freteInfo;
+      freteTxt = fmt(freteInfo);
       freteColor = '#e65100';
     }
   }
@@ -120,8 +120,8 @@ function atualizarResumo() {
 }
 
 function renderCarrinho() {
-  const lista  = document.getElementById('listaItens');
-  const acoes  = document.getElementById('carrinhoAcoes');
+  const lista = document.getElementById('listaItens');
+  const acoes = document.getElementById('carrinhoAcoes');
   if (!lista) return;
 
   const itens = lerCarrinho();
@@ -205,24 +205,24 @@ function finalizarPedido() {
 ══════════════════════════════════════════════ */
 const LOJA_LAT = -23.6080;
 const LOJA_LNG = -46.7550;
-const FRETE_FAIXA_KM    = 3;      // km por faixa
+const FRETE_FAIXA_KM = 3;      // km por faixa
 const FRETE_VALOR_FAIXA = 2.50;   // R$ por faixa adicional
-const FRETE_MAX_KM      = 15;     // acima disso: sob consulta
+const FRETE_MAX_KM = 15;     // acima disso: sob consulta
 
 /* Haversine – distância em km entre dois pontos */
 function haversine(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat/2)**2 +
-            Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180) * Math.sin(dLon/2)**2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
 /* Calcula o valor do frete dado a distância em km */
 function calcularValorFrete(km) {
   if (km <= FRETE_FAIXA_KM) return 0;                     // Grátis até 3 km
-  if (km > FRETE_MAX_KM)    return -1;                     // Sob consulta
+  if (km > FRETE_MAX_KM) return -1;                     // Sob consulta
   const faixasExtras = Math.ceil((km - FRETE_FAIXA_KM) / FRETE_FAIXA_KM);
   return faixasExtras * FRETE_VALOR_FAIXA;
 }
@@ -263,7 +263,7 @@ async function calcularFrete() {
   try {
     // Geocoding via Nominatim (OpenStreetMap) – gratuito, sem API key
     const query = encodeURIComponent(endereco + ', Brasil');
-    const url   = `https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1`;
+    const url = `https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1`;
 
     const resp = await fetch(url, {
       headers: { 'Accept-Language': 'pt-BR', 'User-Agent': 'MercadoFamiliaGama/1.0' }
@@ -290,16 +290,16 @@ async function calcularFrete() {
     let tipo, msg;
     if (valorFrete === 0) {
       tipo = 'gratis';
-      msg  = `🎉 <strong>Frete Grátis!</strong> Seu endereço está a apenas <strong>${kmArredondado} km</strong> da nossa loja.<br>
+      msg = `🎉 <strong>Frete Grátis!</strong> Seu endereço está a apenas <strong>${kmArredondado} km</strong> da nossa loja.<br>
               <span class="frete-distancia">📍 ${display_name}</span>`;
     } else if (valorFrete === -1) {
       tipo = 'erro';
-      msg  = `📞 <strong>Entrega sob consulta.</strong> Seu endereço está a <strong>${kmArredondado} km</strong> da loja — acima de ${FRETE_MAX_KM} km.<br>
+      msg = `📞 <strong>Entrega sob consulta.</strong> Seu endereço está a <strong>${kmArredondado} km</strong> da loja — acima de ${FRETE_MAX_KM} km.<br>
               Entre em contato para verificar a disponibilidade.<br>
               <span class="frete-distancia">📍 ${display_name}</span>`;
     } else {
       tipo = 'pago';
-      msg  = `🚚 <strong>Frete: ${fmt(valorFrete)}</strong> — Distância de <strong>${kmArredondado} km</strong> da nossa loja.<br>
+      msg = `🚚 <strong>Frete: ${fmt(valorFrete)}</strong> — Distância de <strong>${kmArredondado} km</strong> da nossa loja.<br>
               <span class="frete-distancia">📍 ${display_name}</span>`;
     }
 
@@ -350,9 +350,9 @@ function filterProd(cat, btn) {
    FORMULÁRIO DE CONTATO
 ══════════════════════════════════════════════ */
 function enviarFormulario() {
-  const nome     = document.getElementById('nome').value.trim();
-  const email    = document.getElementById('email').value.trim();
-  const assunto  = document.getElementById('assunto').value;
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const assunto = document.getElementById('assunto').value;
   const mensagem = document.getElementById('mensagem').value.trim();
 
   if (!nome || !email || !assunto || !mensagem) {
@@ -366,7 +366,7 @@ function enviarFormulario() {
   }
 
   document.getElementById('sucessoMsg').style.display = 'block';
-  ['nome','email','telefone','assunto','mensagem'].forEach(id => {
+  ['nome', 'email', 'telefone', 'assunto', 'mensagem'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
@@ -383,46 +383,46 @@ const subareasPorArea = {
   escritorio: {
     label: 'Escritório',
     opcoes: [
-      { value: 'ti',         label: '💻 Desenvolvedor de TI' },
-      { value: 'marketing',  label: '📣 Marketing & Redes Sociais' },
+      { value: 'ti', label: '💻 Desenvolvedor de TI' },
+      { value: 'marketing', label: '📣 Marketing & Redes Sociais' },
       { value: 'financeiro', label: '💰 Financeiro / Contabilidade' },
-      { value: 'rh',         label: '👥 Recursos Humanos' },
-      { value: 'compras',    label: '🛒 Compras & Suprimentos' },
-      { value: 'adm',        label: '📋 Assistente Administrativo' },
+      { value: 'rh', label: '👥 Recursos Humanos' },
+      { value: 'compras', label: '🛒 Compras & Suprimentos' },
+      { value: 'adm', label: '📋 Assistente Administrativo' },
     ]
   },
   unidade: {
     label: 'Trabalhar na Unidade',
     opcoes: [
-      { value: 'caixa',      label: '🖥️ Operador(a) de Caixa' },
-      { value: 'repositor',  label: '📦 Repositor(a) de Produtos' },
-      { value: 'faxineiro',  label: '🧹 Auxiliar de Limpeza' },
-      { value: 'acougue',    label: '🥩 Auxiliar de Açougue' },
+      { value: 'caixa', label: '🖥️ Operador(a) de Caixa' },
+      { value: 'repositor', label: '📦 Repositor(a) de Produtos' },
+      { value: 'faxineiro', label: '🧹 Auxiliar de Limpeza' },
+      { value: 'acougue', label: '🥩 Auxiliar de Açougue' },
       { value: 'hortifruti', label: '🥦 Auxiliar de Hortifruti' },
-      { value: 'padaria',    label: '🍞 Auxiliar de Padaria' },
-      { value: 'seguranca',  label: '🛡️ Segurança Patrimonial' },
-      { value: 'estoque',    label: '🏭 Auxiliar de Estoque' },
+      { value: 'padaria', label: '🍞 Auxiliar de Padaria' },
+      { value: 'seguranca', label: '🛡️ Segurança Patrimonial' },
+      { value: 'estoque', label: '🏭 Auxiliar de Estoque' },
     ]
   },
   logistica: {
     label: 'Logística & Entregas',
     opcoes: [
-      { value: 'motorista',  label: '🚚 Motorista Entregador' },
-      { value: 'ajudante',   label: '📬 Ajudante de Entrega' },
-      { value: 'separacao',  label: '📋 Separador de Pedidos' },
+      { value: 'motorista', label: '🚚 Motorista Entregador' },
+      { value: 'ajudante', label: '📬 Ajudante de Entrega' },
+      { value: 'separacao', label: '📋 Separador de Pedidos' },
     ]
   },
   gerencia: {
     label: 'Gerência & Supervisão',
     opcoes: [
-      { value: 'gerente',    label: '🏆 Gerente de Loja' },
+      { value: 'gerente', label: '🏆 Gerente de Loja' },
       { value: 'supervisor', label: '📊 Supervisor de Setor' },
-      { value: 'lider',      label: '⭐ Líder de Equipe' },
+      { value: 'lider', label: '⭐ Líder de Equipe' },
     ]
   }
 };
 
-let stepAtual  = 1;
+let stepAtual = 1;
 const totalSteps = 3;
 
 function atualizarSteps() {
@@ -457,10 +457,10 @@ function voltarStep() {
 
 function validarStep(step) {
   if (step === 1) {
-    const nome  = document.getElementById('tc-nome')?.value.trim();
-    const nasc  = document.getElementById('tc-nascimento')?.value;
+    const nome = document.getElementById('tc-nome')?.value.trim();
+    const nasc = document.getElementById('tc-nascimento')?.value;
     const email = document.getElementById('tc-email')?.value.trim();
-    const tel   = document.getElementById('tc-telefone')?.value.trim();
+    const tel = document.getElementById('tc-telefone')?.value.trim();
     if (!nome || !nasc || !email || !tel) { mostrarErro('Por favor, preencha todos os campos obrigatórios do Passo 1.'); return false; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { mostrarErro('Por favor, informe um e-mail válido.'); return false; }
     const idade = new Date().getFullYear() - new Date(nasc).getFullYear();
@@ -492,7 +492,7 @@ function esconderErro() {
 
 function onAreaChange() {
   const area = document.getElementById('tc-area')?.value;
-  const wrapper   = document.getElementById('subarea-wrapper');
+  const wrapper = document.getElementById('subarea-wrapper');
   const container = document.getElementById('subareas-container');
   if (!wrapper || !container) return;
   if (!area || !subareasPorArea[area]) { wrapper.classList.remove('visible'); container.innerHTML = ''; return; }
@@ -506,7 +506,7 @@ function onAreaChange() {
 
 function enviarCandidatura() {
   if (!validarStep(3)) return;
-  const nome   = document.getElementById('tc-nome')?.value.trim();
+  const nome = document.getElementById('tc-nome')?.value.trim();
   const checks = [...document.querySelectorAll('.subarea-check input[type="checkbox"]:checked')]
     .map(c => c.parentElement.textContent.trim()).join(', ');
   document.getElementById('formCandidatura').style.display = 'none';

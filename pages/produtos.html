@@ -1,804 +1,870 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produtos – Mercado Família Gama</title>
 </head>
+
 <body>
 
-<!-- HEADER -->
-<header>
-  <nav>
-    <a class="logo-nav" href="index.html">
-      <span class="cart-icon">🛒</span>
-      <div>
-        <span>GAMA</span>
-        <small>Mercado Família</small>
-      </div>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="historia.html">Nossa História</a></li>
-      <li><a href="produtos.html" class="active">Produtos</a></li>
-      <li><a href="contato.html">Contato</a></li>
-      <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
-      <li>
-        <a class="btn-carrinho-nav" href="carrinho.html">
-          🛒 Carrinho <span class="cart-count-badge" id="cartBadge">0</span>
-        </a>
-      </li>
-    </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="produtos-hero">
-  <h1>NOSSOS PRODUTOS</h1>
-  <p>Variedade e qualidade para o seu dia a dia — mais de 60 produtos com as melhores marcas</p>
-</section>
-
-<!-- GRID DE PRODUTOS -->
-<section class="section">
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" onclick="filterProd('todos', this)">🛍️ Todos</button>
-    <button class="filter-btn" onclick="filterProd('acougue', this)">🥩 Açougue</button>
-    <button class="filter-btn" onclick="filterProd('hortifruti', this)">🥦 Hortifruti</button>
-    <button class="filter-btn" onclick="filterProd('laticinios', this)">🥛 Laticínios</button>
-    <button class="filter-btn" onclick="filterProd('padaria', this)">🍞 Padaria</button>
-    <button class="filter-btn" onclick="filterProd('bebidas', this)">🥤 Bebidas</button>
-    <button class="filter-btn" onclick="filterProd('limpeza', this)">🧴 Limpeza</button>
-    <button class="filter-btn" onclick="filterProd('mercearia', this)">🏪 Mercearia</button>
-    <button class="filter-btn" onclick="filterProd('higiene', this)">🪥 Higiene</button>
-  </div>
-
-  <div class="produtos-grid" id="produtosGrid">
-
-    <!-- ═══════════ AÇOUGUE ═══════════ -->
-    <div class="produto-card" data-cat="acougue" data-id="p1" data-nome="Picanha Bovina" data-preco="79.90" data-unidade="/kg">
-      <div class="produto-thumb">🥩</div>
-      <div class="produto-info">
-        <div class="produto-marca">Corte Nobre</div>
-        <h4>Picanha Bovina</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 79,90<span class="produto-preco-antigo">R$ 89,90</span></div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p2" data-nome="Alcatra Bovina" data-preco="49.90" data-unidade="/kg">
-      <div class="produto-thumb">🥩</div>
-      <div class="produto-info">
-        <div class="produto-marca">Friboi</div>
-        <h4>Alcatra Bovina</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 49,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p3" data-nome="Frango Inteiro" data-preco="12.90" data-unidade="/kg">
-      <div class="produto-thumb">🍗</div>
-      <div class="produto-info">
-        <div class="produto-marca">Seara</div>
-        <h4>Frango Inteiro</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 12,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p4" data-nome="Frango Inteiro" data-preco="11.90" data-unidade="/kg">
-      <div class="produto-thumb">🍗</div>
-      <div class="produto-info">
-        <div class="produto-marca">Sadia</div>
-        <h4>Frango Inteiro</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 11,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p5" data-nome="Costela Suína" data-preco="24.90" data-unidade="/kg">
-      <div class="produto-thumb">🥓</div>
-      <div class="produto-info">
-        <div class="produto-marca">Rezende</div>
-        <h4>Costela Suína</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 24,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p6" data-nome="Linguiça Calabresa" data-preco="18.90" data-unidade="/kg">
-      <div class="produto-thumb">🌭</div>
-      <div class="produto-info">
-        <div class="produto-marca">Seara</div>
-        <h4>Linguiça Calabresa</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 18,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p7" data-nome="Linguiça Calabresa" data-preco="17.50" data-unidade="/kg">
-      <div class="produto-thumb">🌭</div>
-      <div class="produto-info">
-        <div class="produto-marca">Rezende</div>
-        <h4>Linguiça Calabresa</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 17,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="acougue" data-id="p8" data-nome="Filé de Tilápia" data-preco="29.90" data-unidade="/kg">
-      <div class="produto-thumb">🐟</div>
-      <div class="produto-info">
-        <div class="produto-marca">Bom Peixe</div>
-        <h4>Filé de Tilápia</h4>
-        <div class="cat">Açougue</div>
-        <div class="produto-preco">R$ 29,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ HORTIFRUTI ═══════════ -->
-    <div class="produto-card" data-cat="hortifruti" data-id="p9" data-nome="Tomate Italiano" data-preco="5.90" data-unidade="/kg">
-      <div class="produto-thumb">🍅</div>
-      <div class="produto-info">
-        <div class="produto-marca">Campo Verde</div>
-        <h4>Tomate Italiano</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 5,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p10" data-nome="Tomate Cereja" data-preco="7.90" data-unidade="/bandeja">
-      <div class="produto-thumb">🍅</div>
-      <div class="produto-info">
-        <div class="produto-marca">Horta Natural</div>
-        <h4>Tomate Cereja</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 7,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p11" data-nome="Brócolis" data-preco="4.50" data-unidade="/un">
-      <div class="produto-thumb">🥦</div>
-      <div class="produto-info">
-        <div class="produto-marca">Vida Verde</div>
-        <h4>Brócolis</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 4,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p12" data-nome="Banana Prata" data-preco="3.99" data-unidade="/kg">
-      <div class="produto-thumb">🍌</div>
-      <div class="produto-info">
-        <div class="produto-marca">Fazenda Boa Vista</div>
-        <h4>Banana Prata</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 3,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p13" data-nome="Banana Nanica" data-preco="3.49" data-unidade="/kg">
-      <div class="produto-thumb">🍌</div>
-      <div class="produto-info">
-        <div class="produto-marca">Sítio Gama</div>
-        <h4>Banana Nanica</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 3,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p14" data-nome="Laranja Pêra" data-preco="4.90" data-unidade="/kg">
-      <div class="produto-thumb">🍊</div>
-      <div class="produto-info">
-        <div class="produto-marca">Citrus SP</div>
-        <h4>Laranja Pêra</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 4,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p15" data-nome="Maçã Fuji" data-preco="8.90" data-unidade="/kg">
-      <div class="produto-thumb">🍎</div>
-      <div class="produto-info">
-        <div class="produto-marca">Fruticultura Sul</div>
-        <h4>Maçã Fuji</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 8,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="hortifruti" data-id="p16" data-nome="Batata Inglesa" data-preco="3.99" data-unidade="/kg">
-      <div class="produto-thumb">🥔</div>
-      <div class="produto-info">
-        <div class="produto-marca">Campo Vivo</div>
-        <h4>Batata Inglesa</h4>
-        <div class="cat">Hortifruti</div>
-        <div class="produto-preco">R$ 3,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ LATICÍNIOS ═══════════ -->
-    <div class="produto-card" data-cat="laticinios" data-id="p17" data-nome="Leite Integral 1L" data-preco="5.49" data-unidade="/un">
-      <div class="produto-thumb">🥛</div>
-      <div class="produto-info">
-        <div class="produto-marca">Italac</div>
-        <h4>Leite Integral 1L</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 5,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p18" data-nome="Leite Integral 1L" data-preco="5.99" data-unidade="/un">
-      <div class="produto-thumb">🥛</div>
-      <div class="produto-info">
-        <div class="produto-marca">Parmalat</div>
-        <h4>Leite Integral 1L</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 5,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p19" data-nome="Queijo Mussarela" data-preco="42.90" data-unidade="/kg">
-      <div class="produto-thumb">🧀</div>
-      <div class="produto-info">
-        <div class="produto-marca">Tirolez</div>
-        <h4>Queijo Mussarela</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 42,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p20" data-nome="Queijo Mussarela" data-preco="39.90" data-unidade="/kg">
-      <div class="produto-thumb">🧀</div>
-      <div class="produto-info">
-        <div class="produto-marca">Quatá</div>
-        <h4>Queijo Mussarela</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 39,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p21" data-nome="Iogurte Natural 170g" data-preco="3.99" data-unidade="/un">
-      <div class="produto-thumb">🫙</div>
-      <div class="produto-info">
-        <div class="produto-marca">Danone</div>
-        <h4>Iogurte Natural 170g</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 3,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p22" data-nome="Iogurte Natural 170g" data-preco="3.49" data-unidade="/un">
-      <div class="produto-thumb">🫙</div>
-      <div class="produto-info">
-        <div class="produto-marca">Nestlé</div>
-        <h4>Iogurte Natural 170g</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 3,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p23" data-nome="Manteiga 200g" data-preco="9.90" data-unidade="/un">
-      <div class="produto-thumb">🧈</div>
-      <div class="produto-info">
-        <div class="produto-marca">Aviação</div>
-        <h4>Manteiga 200g</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 9,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="laticinios" data-id="p24" data-nome="Manteiga 200g" data-preco="11.50" data-unidade="/un">
-      <div class="produto-thumb">🧈</div>
-      <div class="produto-info">
-        <div class="produto-marca">Batavo</div>
-        <h4>Manteiga 200g</h4>
-        <div class="cat">Laticínios</div>
-        <div class="produto-preco">R$ 11,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ PADARIA ═══════════ -->
-    <div class="produto-card" data-cat="padaria" data-id="p25" data-nome="Pão Francês" data-preco="0.79" data-unidade="/un">
-      <div class="produto-thumb">🍞</div>
-      <div class="produto-info">
-        <div class="produto-marca">Padaria Gama</div>
-        <h4>Pão Francês</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 0,79</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="padaria" data-id="p26" data-nome="Pão de Forma 500g" data-preco="7.90" data-unidade="/un">
-      <div class="produto-thumb">🍞</div>
-      <div class="produto-info">
-        <div class="produto-marca">Wickbold</div>
-        <h4>Pão de Forma 500g</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 7,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="padaria" data-id="p27" data-nome="Pão de Forma 500g" data-preco="6.99" data-unidade="/un">
-      <div class="produto-thumb">🍞</div>
-      <div class="produto-info">
-        <div class="produto-marca">Pullman</div>
-        <h4>Pão de Forma 500g</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 6,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="padaria" data-id="p28" data-nome="Croissant" data-preco="3.50" data-unidade="/un">
-      <div class="produto-thumb">🥐</div>
-      <div class="produto-info">
-        <div class="produto-marca">Padaria Gama</div>
-        <h4>Croissant</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 3,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="padaria" data-id="p29" data-nome="Bolo de Cenoura" data-preco="18.90" data-unidade="/un">
-      <div class="produto-thumb">🎂</div>
-      <div class="produto-info">
-        <div class="produto-marca">Padaria Gama</div>
-        <h4>Bolo de Cenoura</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 18,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="padaria" data-id="p30" data-nome="Pão de Queijo" data-preco="1.50" data-unidade="/un">
-      <div class="produto-thumb">🥨</div>
-      <div class="produto-info">
-        <div class="produto-marca">Forno de Minas</div>
-        <h4>Pão de Queijo</h4>
-        <div class="cat">Padaria</div>
-        <div class="produto-preco">R$ 1,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ BEBIDAS ═══════════ -->
-    <div class="produto-card" data-cat="bebidas" data-id="p31" data-nome="Refrigerante 2L" data-preco="9.90" data-unidade="/un">
-      <div class="produto-thumb">🥤</div>
-      <div class="produto-info">
-        <div class="produto-marca">Coca-Cola</div>
-        <h4>Refrigerante 2L</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 9,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p32" data-nome="Refrigerante 2L" data-preco="8.90" data-unidade="/un">
-      <div class="produto-thumb">🥤</div>
-      <div class="produto-info">
-        <div class="produto-marca">Pepsi</div>
-        <h4>Refrigerante 2L</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 8,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p33" data-nome="Refrigerante 2L" data-preco="6.49" data-unidade="/un">
-      <div class="produto-thumb">🥤</div>
-      <div class="produto-info">
-        <div class="produto-marca">Guaraná Antarctica</div>
-        <h4>Refrigerante 2L</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 6,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p34" data-nome="Cerveja Lata 350ml" data-preco="4.50" data-unidade="/un">
-      <div class="produto-thumb">🍺</div>
-      <div class="produto-info">
-        <div class="produto-marca">Brahma</div>
-        <h4>Cerveja Lata 350ml</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 4,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p35" data-nome="Cerveja Lata 350ml" data-preco="4.99" data-unidade="/un">
-      <div class="produto-thumb">🍺</div>
-      <div class="produto-info">
-        <div class="produto-marca">Heineken</div>
-        <h4>Cerveja Lata 350ml</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 4,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p36" data-nome="Suco de Uva 1L" data-preco="12.90" data-unidade="/un">
-      <div class="produto-thumb">🧃</div>
-      <div class="produto-info">
-        <div class="produto-marca">Welch's</div>
-        <h4>Suco de Uva 1L</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 12,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p37" data-nome="Suco de Laranja 1L" data-preco="10.90" data-unidade="/un">
-      <div class="produto-thumb">🧃</div>
-      <div class="produto-info">
-        <div class="produto-marca">Del Valle</div>
-        <h4>Suco de Laranja 1L</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 10,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p38" data-nome="Água Mineral 500ml" data-preco="2.50" data-unidade="/un">
-      <div class="produto-thumb">💧</div>
-      <div class="produto-info">
-        <div class="produto-marca">Crystal</div>
-        <h4>Água Mineral 500ml</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 2,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="bebidas" data-id="p39" data-nome="Água Mineral 500ml" data-preco="2.29" data-unidade="/un">
-      <div class="produto-thumb">💧</div>
-      <div class="produto-info">
-        <div class="produto-marca">Bonafont</div>
-        <h4>Água Mineral 500ml</h4>
-        <div class="cat">Bebidas</div>
-        <div class="produto-preco">R$ 2,29</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ LIMPEZA ═══════════ -->
-    <div class="produto-card" data-cat="limpeza" data-id="p40" data-nome="Detergente 500ml" data-preco="2.99" data-unidade="/un">
-      <div class="produto-thumb">🧴</div>
-      <div class="produto-info">
-        <div class="produto-marca">Ypê</div>
-        <h4>Detergente 500ml</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 2,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p41" data-nome="Detergente 500ml" data-preco="3.49" data-unidade="/un">
-      <div class="produto-thumb">🧴</div>
-      <div class="produto-info">
-        <div class="produto-marca">Limpol</div>
-        <h4>Detergente 500ml</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 3,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p42" data-nome="Sabão em Pó 1kg" data-preco="14.90" data-unidade="/un">
-      <div class="produto-thumb">🫧</div>
-      <div class="produto-info">
-        <div class="produto-marca">Omo</div>
-        <h4>Sabão em Pó 1kg</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 14,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p43" data-nome="Sabão em Pó 1kg" data-preco="11.90" data-unidade="/un">
-      <div class="produto-thumb">🫧</div>
-      <div class="produto-info">
-        <div class="produto-marca">Ariel</div>
-        <h4>Sabão em Pó 1kg</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 11,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p44" data-nome="Amaciante 2L" data-preco="12.90" data-unidade="/un">
-      <div class="produto-thumb">🫙</div>
-      <div class="produto-info">
-        <div class="produto-marca">Downy</div>
-        <h4>Amaciante 2L</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 12,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p45" data-nome="Amaciante 2L" data-preco="10.50" data-unidade="/un">
-      <div class="produto-thumb">🫙</div>
-      <div class="produto-info">
-        <div class="produto-marca">Comfort</div>
-        <h4>Amaciante 2L</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 10,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="limpeza" data-id="p46" data-nome="Desinfetante 500ml" data-preco="4.90" data-unidade="/un">
-      <div class="produto-thumb">🧹</div>
-      <div class="produto-info">
-        <div class="produto-marca">Pinho Sol</div>
-        <h4>Desinfetante 500ml</h4>
-        <div class="cat">Limpeza</div>
-        <div class="produto-preco">R$ 4,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ MERCEARIA ═══════════ -->
-    <div class="produto-card" data-cat="mercearia" data-id="p47" data-nome="Arroz 5kg" data-preco="22.90" data-unidade="/un">
-      <div class="produto-thumb">🌾</div>
-      <div class="produto-info">
-        <div class="produto-marca">Camil</div>
-        <h4>Arroz Tipo 1 5kg</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 22,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p48" data-nome="Arroz 5kg" data-preco="20.90" data-unidade="/un">
-      <div class="produto-thumb">🌾</div>
-      <div class="produto-info">
-        <div class="produto-marca">Tio João</div>
-        <h4>Arroz Tipo 1 5kg</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 20,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p49" data-nome="Feijão Carioca 1kg" data-preco="8.90" data-unidade="/un">
-      <div class="produto-thumb">🫘</div>
-      <div class="produto-info">
-        <div class="produto-marca">Camil</div>
-        <h4>Feijão Carioca 1kg</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 8,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p50" data-nome="Feijão Carioca 1kg" data-preco="7.90" data-unidade="/un">
-      <div class="produto-thumb">🫘</div>
-      <div class="produto-info">
-        <div class="produto-marca">Kicaldo</div>
-        <h4>Feijão Carioca 1kg</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 7,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p51" data-nome="Óleo de Soja 900ml" data-preco="6.99" data-unidade="/un">
-      <div class="produto-thumb">🫒</div>
-      <div class="produto-info">
-        <div class="produto-marca">Soya</div>
-        <h4>Óleo de Soja 900ml</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 6,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p52" data-nome="Macarrão Espaguete 500g" data-preco="4.49" data-unidade="/un">
-      <div class="produto-thumb">🍝</div>
-      <div class="produto-info">
-        <div class="produto-marca">Barilla</div>
-        <h4>Macarrão Espaguete 500g</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 4,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p53" data-nome="Macarrão Espaguete 500g" data-preco="3.29" data-unidade="/un">
-      <div class="produto-thumb">🍝</div>
-      <div class="produto-info">
-        <div class="produto-marca">Adria</div>
-        <h4>Macarrão Espaguete 500g</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 3,29</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="mercearia" data-id="p54" data-nome="Açúcar Cristal 1kg" data-preco="4.99" data-unidade="/un">
-      <div class="produto-thumb">🍬</div>
-      <div class="produto-info">
-        <div class="produto-marca">União</div>
-        <h4>Açúcar Cristal 1kg</h4>
-        <div class="cat">Mercearia</div>
-        <div class="produto-preco">R$ 4,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- ═══════════ HIGIENE ═══════════ -->
-    <div class="produto-card" data-cat="higiene" data-id="p55" data-nome="Sabonete em Barra" data-preco="2.49" data-unidade="/un">
-      <div class="produto-thumb">🧼</div>
-      <div class="produto-info">
-        <div class="produto-marca">Lux</div>
-        <h4>Sabonete em Barra</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 2,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p56" data-nome="Sabonete em Barra" data-preco="2.99" data-unidade="/un">
-      <div class="produto-thumb">🧼</div>
-      <div class="produto-info">
-        <div class="produto-marca">Dove</div>
-        <h4>Sabonete em Barra</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 2,99</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p57" data-nome="Shampoo 400ml" data-preco="14.90" data-unidade="/un">
-      <div class="produto-thumb">🧴</div>
-      <div class="produto-info">
-        <div class="produto-marca">Pantene</div>
-        <h4>Shampoo 400ml</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 14,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p58" data-nome="Shampoo 400ml" data-preco="13.50" data-unidade="/un">
-      <div class="produto-thumb">🧴</div>
-      <div class="produto-info">
-        <div class="produto-marca">Seda</div>
-        <h4>Shampoo 400ml</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 13,50</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p59" data-nome="Pasta de Dente 90g" data-preco="5.90" data-unidade="/un">
-      <div class="produto-thumb">🪥</div>
-      <div class="produto-info">
-        <div class="produto-marca">Colgate</div>
-        <h4>Pasta de Dente 90g</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 5,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p60" data-nome="Pasta de Dente 90g" data-preco="5.49" data-unidade="/un">
-      <div class="produto-thumb">🪥</div>
-      <div class="produto-info">
-        <div class="produto-marca">Oral-B</div>
-        <h4>Pasta de Dente 90g</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 5,49</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p61" data-nome="Papel Higiênico 4 rolos" data-preco="9.90" data-unidade="/pc">
-      <div class="produto-thumb">🧻</div>
-      <div class="produto-info">
-        <div class="produto-marca">Neve</div>
-        <h4>Papel Higiênico 4 rolos</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 9,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <div class="produto-card" data-cat="higiene" data-id="p62" data-nome="Papel Higiênico 4 rolos" data-preco="8.90" data-unidade="/pc">
-      <div class="produto-thumb">🧻</div>
-      <div class="produto-info">
-        <div class="produto-marca">Personal</div>
-        <h4>Papel Higiênico 4 rolos</h4>
-        <div class="cat">Higiene</div>
-        <div class="produto-preco">R$ 8,90</div>
-        <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- OFERTA BANNER -->
-<div class="oferta-banner">
-  <h2>🎯 OFERTA DA SEMANA</h2>
-  <p>Confira nossas promoções especiais visitando a loja ou ligando para nós!</p>
-  <a class="btn btn-primary" href="contato.html">Ver Contato</a>
-</div>
-
-<!-- TOAST -->
-<div id="toast">✅ Produto adicionado ao carrinho!</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <h3>🛒 MERCADO GAMA</h3>
-      <p>Dia a Dia Com Você!<br>Qualidade e carinho em cada produto. Servindo Taboão da Serra com orgulho e dedicação.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a class="logo-nav" href="../index.html">
+        <span class="cart-icon">🛒</span>
+        <div>
+          <span>GAMA</span>
+          <small>Mercado Família</small>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Início</a></li>
         <li><a href="historia.html">Nossa História</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="produtos.html" class="active">Produtos</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+        <li>
+          <a class="btn-carrinho-nav" href="carrinho.html">
+            🛒 Carrinho <span class="cart-count-badge" id="cartBadge">0</span>
+          </a>
+        </li>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Categorias</h4>
-      <ul>
-        <li><a href="produtos.html">Açougue</a></li>
-        <li><a href="produtos.html">Hortifruti</a></li>
-        <li><a href="produtos.html">Padaria</a></li>
-        <li><a href="produtos.html">Bebidas</a></li>
-        <li><a href="produtos.html">Limpeza</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Mercado Família Gama – Taboão da Serra/SP</span>
-    <div class="social-links">
-      <a href="#" title="Instagram">📸</a>
-      <a href="#" title="Facebook">📘</a>
-      <a href="#" title="WhatsApp">💬</a>
-    </div>
-  </div>
-</footer>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
 
-<script src="script.js"></script>
+  <!-- HERO -->
+  <section class="produtos-hero">
+    <h1>NOSSOS PRODUTOS</h1>
+    <p>Variedade e qualidade para o seu dia a dia — mais de 60 produtos com as melhores marcas</p>
+  </section>
+
+  <!-- GRID DE PRODUTOS -->
+  <section class="section">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" onclick="filterProd('todos', this)">🛍️ Todos</button>
+      <button class="filter-btn" onclick="filterProd('acougue', this)">🥩 Açougue</button>
+      <button class="filter-btn" onclick="filterProd('hortifruti', this)">🥦 Hortifruti</button>
+      <button class="filter-btn" onclick="filterProd('laticinios', this)">🥛 Laticínios</button>
+      <button class="filter-btn" onclick="filterProd('padaria', this)">🍞 Padaria</button>
+      <button class="filter-btn" onclick="filterProd('bebidas', this)">🥤 Bebidas</button>
+      <button class="filter-btn" onclick="filterProd('limpeza', this)">🧴 Limpeza</button>
+      <button class="filter-btn" onclick="filterProd('mercearia', this)">🏪 Mercearia</button>
+      <button class="filter-btn" onclick="filterProd('higiene', this)">🪥 Higiene</button>
+    </div>
+
+    <div class="produtos-grid" id="produtosGrid">
+
+      <!-- ═══════════ AÇOUGUE ═══════════ -->
+      <div class="produto-card" data-cat="acougue" data-id="p1" data-nome="Picanha Bovina" data-preco="79.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🥩</div>
+        <div class="produto-info">
+          <div class="produto-marca">Corte Nobre</div>
+          <h4>Picanha Bovina</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 79,90<span class="produto-preco-antigo">R$ 89,90</span></div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p2" data-nome="Alcatra Bovina" data-preco="49.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🥩</div>
+        <div class="produto-info">
+          <div class="produto-marca">Friboi</div>
+          <h4>Alcatra Bovina</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 49,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p3" data-nome="Frango Inteiro" data-preco="12.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍗</div>
+        <div class="produto-info">
+          <div class="produto-marca">Seara</div>
+          <h4>Frango Inteiro</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 12,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p4" data-nome="Frango Inteiro" data-preco="11.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍗</div>
+        <div class="produto-info">
+          <div class="produto-marca">Sadia</div>
+          <h4>Frango Inteiro</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 11,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p5" data-nome="Costela Suína" data-preco="24.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🥓</div>
+        <div class="produto-info">
+          <div class="produto-marca">Rezende</div>
+          <h4>Costela Suína</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 24,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p6" data-nome="Linguiça Calabresa" data-preco="18.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🌭</div>
+        <div class="produto-info">
+          <div class="produto-marca">Seara</div>
+          <h4>Linguiça Calabresa</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 18,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p7" data-nome="Linguiça Calabresa" data-preco="17.50"
+        data-unidade="/kg">
+        <div class="produto-thumb">🌭</div>
+        <div class="produto-info">
+          <div class="produto-marca">Rezende</div>
+          <h4>Linguiça Calabresa</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 17,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="acougue" data-id="p8" data-nome="Filé de Tilápia" data-preco="29.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🐟</div>
+        <div class="produto-info">
+          <div class="produto-marca">Bom Peixe</div>
+          <h4>Filé de Tilápia</h4>
+          <div class="cat">Açougue</div>
+          <div class="produto-preco">R$ 29,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ HORTIFRUTI ═══════════ -->
+      <div class="produto-card" data-cat="hortifruti" data-id="p9" data-nome="Tomate Italiano" data-preco="5.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍅</div>
+        <div class="produto-info">
+          <div class="produto-marca">Campo Verde</div>
+          <h4>Tomate Italiano</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 5,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p10" data-nome="Tomate Cereja" data-preco="7.90"
+        data-unidade="/bandeja">
+        <div class="produto-thumb">🍅</div>
+        <div class="produto-info">
+          <div class="produto-marca">Horta Natural</div>
+          <h4>Tomate Cereja</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 7,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p11" data-nome="Brócolis" data-preco="4.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🥦</div>
+        <div class="produto-info">
+          <div class="produto-marca">Vida Verde</div>
+          <h4>Brócolis</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 4,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p12" data-nome="Banana Prata" data-preco="3.99"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍌</div>
+        <div class="produto-info">
+          <div class="produto-marca">Fazenda Boa Vista</div>
+          <h4>Banana Prata</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 3,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p13" data-nome="Banana Nanica" data-preco="3.49"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍌</div>
+        <div class="produto-info">
+          <div class="produto-marca">Sítio Gama</div>
+          <h4>Banana Nanica</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 3,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p14" data-nome="Laranja Pêra" data-preco="4.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍊</div>
+        <div class="produto-info">
+          <div class="produto-marca">Citrus SP</div>
+          <h4>Laranja Pêra</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 4,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p15" data-nome="Maçã Fuji" data-preco="8.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🍎</div>
+        <div class="produto-info">
+          <div class="produto-marca">Fruticultura Sul</div>
+          <h4>Maçã Fuji</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 8,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="hortifruti" data-id="p16" data-nome="Batata Inglesa" data-preco="3.99"
+        data-unidade="/kg">
+        <div class="produto-thumb">🥔</div>
+        <div class="produto-info">
+          <div class="produto-marca">Campo Vivo</div>
+          <h4>Batata Inglesa</h4>
+          <div class="cat">Hortifruti</div>
+          <div class="produto-preco">R$ 3,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LATICÍNIOS ═══════════ -->
+      <div class="produto-card" data-cat="laticinios" data-id="p17" data-nome="Leite Integral 1L" data-preco="5.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🥛</div>
+        <div class="produto-info">
+          <div class="produto-marca">Italac</div>
+          <h4>Leite Integral 1L</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 5,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p18" data-nome="Leite Integral 1L" data-preco="5.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🥛</div>
+        <div class="produto-info">
+          <div class="produto-marca">Parmalat</div>
+          <h4>Leite Integral 1L</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 5,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p19" data-nome="Queijo Mussarela" data-preco="42.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🧀</div>
+        <div class="produto-info">
+          <div class="produto-marca">Tirolez</div>
+          <h4>Queijo Mussarela</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 42,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p20" data-nome="Queijo Mussarela" data-preco="39.90"
+        data-unidade="/kg">
+        <div class="produto-thumb">🧀</div>
+        <div class="produto-info">
+          <div class="produto-marca">Quatá</div>
+          <h4>Queijo Mussarela</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 39,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p21" data-nome="Iogurte Natural 170g" data-preco="3.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🫙</div>
+        <div class="produto-info">
+          <div class="produto-marca">Danone</div>
+          <h4>Iogurte Natural 170g</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 3,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p22" data-nome="Iogurte Natural 170g" data-preco="3.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🫙</div>
+        <div class="produto-info">
+          <div class="produto-marca">Nestlé</div>
+          <h4>Iogurte Natural 170g</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 3,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p23" data-nome="Manteiga 200g" data-preco="9.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🧈</div>
+        <div class="produto-info">
+          <div class="produto-marca">Aviação</div>
+          <h4>Manteiga 200g</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 9,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="laticinios" data-id="p24" data-nome="Manteiga 200g" data-preco="11.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🧈</div>
+        <div class="produto-info">
+          <div class="produto-marca">Batavo</div>
+          <h4>Manteiga 200g</h4>
+          <div class="cat">Laticínios</div>
+          <div class="produto-preco">R$ 11,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ PADARIA ═══════════ -->
+      <div class="produto-card" data-cat="padaria" data-id="p25" data-nome="Pão Francês" data-preco="0.79"
+        data-unidade="/un">
+        <div class="produto-thumb">🍞</div>
+        <div class="produto-info">
+          <div class="produto-marca">Padaria Gama</div>
+          <h4>Pão Francês</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 0,79</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="padaria" data-id="p26" data-nome="Pão de Forma 500g" data-preco="7.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🍞</div>
+        <div class="produto-info">
+          <div class="produto-marca">Wickbold</div>
+          <h4>Pão de Forma 500g</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 7,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="padaria" data-id="p27" data-nome="Pão de Forma 500g" data-preco="6.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🍞</div>
+        <div class="produto-info">
+          <div class="produto-marca">Pullman</div>
+          <h4>Pão de Forma 500g</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 6,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="padaria" data-id="p28" data-nome="Croissant" data-preco="3.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🥐</div>
+        <div class="produto-info">
+          <div class="produto-marca">Padaria Gama</div>
+          <h4>Croissant</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 3,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="padaria" data-id="p29" data-nome="Bolo de Cenoura" data-preco="18.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🎂</div>
+        <div class="produto-info">
+          <div class="produto-marca">Padaria Gama</div>
+          <h4>Bolo de Cenoura</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 18,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="padaria" data-id="p30" data-nome="Pão de Queijo" data-preco="1.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🥨</div>
+        <div class="produto-info">
+          <div class="produto-marca">Forno de Minas</div>
+          <h4>Pão de Queijo</h4>
+          <div class="cat">Padaria</div>
+          <div class="produto-preco">R$ 1,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ BEBIDAS ═══════════ -->
+      <div class="produto-card" data-cat="bebidas" data-id="p31" data-nome="Refrigerante 2L" data-preco="9.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🥤</div>
+        <div class="produto-info">
+          <div class="produto-marca">Coca-Cola</div>
+          <h4>Refrigerante 2L</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 9,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p32" data-nome="Refrigerante 2L" data-preco="8.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🥤</div>
+        <div class="produto-info">
+          <div class="produto-marca">Pepsi</div>
+          <h4>Refrigerante 2L</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 8,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p33" data-nome="Refrigerante 2L" data-preco="6.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🥤</div>
+        <div class="produto-info">
+          <div class="produto-marca">Guaraná Antarctica</div>
+          <h4>Refrigerante 2L</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 6,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p34" data-nome="Cerveja Lata 350ml" data-preco="4.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🍺</div>
+        <div class="produto-info">
+          <div class="produto-marca">Brahma</div>
+          <h4>Cerveja Lata 350ml</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 4,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p35" data-nome="Cerveja Lata 350ml" data-preco="4.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🍺</div>
+        <div class="produto-info">
+          <div class="produto-marca">Heineken</div>
+          <h4>Cerveja Lata 350ml</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 4,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p36" data-nome="Suco de Uva 1L" data-preco="12.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🧃</div>
+        <div class="produto-info">
+          <div class="produto-marca">Welch's</div>
+          <h4>Suco de Uva 1L</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 12,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p37" data-nome="Suco de Laranja 1L" data-preco="10.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🧃</div>
+        <div class="produto-info">
+          <div class="produto-marca">Del Valle</div>
+          <h4>Suco de Laranja 1L</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 10,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p38" data-nome="Água Mineral 500ml" data-preco="2.50"
+        data-unidade="/un">
+        <div class="produto-thumb">💧</div>
+        <div class="produto-info">
+          <div class="produto-marca">Crystal</div>
+          <h4>Água Mineral 500ml</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 2,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="bebidas" data-id="p39" data-nome="Água Mineral 500ml" data-preco="2.29"
+        data-unidade="/un">
+        <div class="produto-thumb">💧</div>
+        <div class="produto-info">
+          <div class="produto-marca">Bonafont</div>
+          <h4>Água Mineral 500ml</h4>
+          <div class="cat">Bebidas</div>
+          <div class="produto-preco">R$ 2,29</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ LIMPEZA ═══════════ -->
+      <div class="produto-card" data-cat="limpeza" data-id="p40" data-nome="Detergente 500ml" data-preco="2.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🧴</div>
+        <div class="produto-info">
+          <div class="produto-marca">Ypê</div>
+          <h4>Detergente 500ml</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 2,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p41" data-nome="Detergente 500ml" data-preco="3.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🧴</div>
+        <div class="produto-info">
+          <div class="produto-marca">Limpol</div>
+          <h4>Detergente 500ml</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 3,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p42" data-nome="Sabão em Pó 1kg" data-preco="14.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🫧</div>
+        <div class="produto-info">
+          <div class="produto-marca">Omo</div>
+          <h4>Sabão em Pó 1kg</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 14,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p43" data-nome="Sabão em Pó 1kg" data-preco="11.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🫧</div>
+        <div class="produto-info">
+          <div class="produto-marca">Ariel</div>
+          <h4>Sabão em Pó 1kg</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 11,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p44" data-nome="Amaciante 2L" data-preco="12.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🫙</div>
+        <div class="produto-info">
+          <div class="produto-marca">Downy</div>
+          <h4>Amaciante 2L</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 12,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p45" data-nome="Amaciante 2L" data-preco="10.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🫙</div>
+        <div class="produto-info">
+          <div class="produto-marca">Comfort</div>
+          <h4>Amaciante 2L</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 10,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="limpeza" data-id="p46" data-nome="Desinfetante 500ml" data-preco="4.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🧹</div>
+        <div class="produto-info">
+          <div class="produto-marca">Pinho Sol</div>
+          <h4>Desinfetante 500ml</h4>
+          <div class="cat">Limpeza</div>
+          <div class="produto-preco">R$ 4,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ MERCEARIA ═══════════ -->
+      <div class="produto-card" data-cat="mercearia" data-id="p47" data-nome="Arroz 5kg" data-preco="22.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🌾</div>
+        <div class="produto-info">
+          <div class="produto-marca">Camil</div>
+          <h4>Arroz Tipo 1 5kg</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 22,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p48" data-nome="Arroz 5kg" data-preco="20.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🌾</div>
+        <div class="produto-info">
+          <div class="produto-marca">Tio João</div>
+          <h4>Arroz Tipo 1 5kg</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 20,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p49" data-nome="Feijão Carioca 1kg" data-preco="8.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🫘</div>
+        <div class="produto-info">
+          <div class="produto-marca">Camil</div>
+          <h4>Feijão Carioca 1kg</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 8,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p50" data-nome="Feijão Carioca 1kg" data-preco="7.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🫘</div>
+        <div class="produto-info">
+          <div class="produto-marca">Kicaldo</div>
+          <h4>Feijão Carioca 1kg</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 7,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p51" data-nome="Óleo de Soja 900ml" data-preco="6.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🫒</div>
+        <div class="produto-info">
+          <div class="produto-marca">Soya</div>
+          <h4>Óleo de Soja 900ml</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 6,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p52" data-nome="Macarrão Espaguete 500g" data-preco="4.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🍝</div>
+        <div class="produto-info">
+          <div class="produto-marca">Barilla</div>
+          <h4>Macarrão Espaguete 500g</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 4,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p53" data-nome="Macarrão Espaguete 500g" data-preco="3.29"
+        data-unidade="/un">
+        <div class="produto-thumb">🍝</div>
+        <div class="produto-info">
+          <div class="produto-marca">Adria</div>
+          <h4>Macarrão Espaguete 500g</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 3,29</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="mercearia" data-id="p54" data-nome="Açúcar Cristal 1kg" data-preco="4.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🍬</div>
+        <div class="produto-info">
+          <div class="produto-marca">União</div>
+          <h4>Açúcar Cristal 1kg</h4>
+          <div class="cat">Mercearia</div>
+          <div class="produto-preco">R$ 4,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <!-- ═══════════ HIGIENE ═══════════ -->
+      <div class="produto-card" data-cat="higiene" data-id="p55" data-nome="Sabonete em Barra" data-preco="2.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🧼</div>
+        <div class="produto-info">
+          <div class="produto-marca">Lux</div>
+          <h4>Sabonete em Barra</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 2,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p56" data-nome="Sabonete em Barra" data-preco="2.99"
+        data-unidade="/un">
+        <div class="produto-thumb">🧼</div>
+        <div class="produto-info">
+          <div class="produto-marca">Dove</div>
+          <h4>Sabonete em Barra</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 2,99</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p57" data-nome="Shampoo 400ml" data-preco="14.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🧴</div>
+        <div class="produto-info">
+          <div class="produto-marca">Pantene</div>
+          <h4>Shampoo 400ml</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 14,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p58" data-nome="Shampoo 400ml" data-preco="13.50"
+        data-unidade="/un">
+        <div class="produto-thumb">🧴</div>
+        <div class="produto-info">
+          <div class="produto-marca">Seda</div>
+          <h4>Shampoo 400ml</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 13,50</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p59" data-nome="Pasta de Dente 90g" data-preco="5.90"
+        data-unidade="/un">
+        <div class="produto-thumb">🪥</div>
+        <div class="produto-info">
+          <div class="produto-marca">Colgate</div>
+          <h4>Pasta de Dente 90g</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 5,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p60" data-nome="Pasta de Dente 90g" data-preco="5.49"
+        data-unidade="/un">
+        <div class="produto-thumb">🪥</div>
+        <div class="produto-info">
+          <div class="produto-marca">Oral-B</div>
+          <h4>Pasta de Dente 90g</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 5,49</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p61" data-nome="Papel Higiênico 4 rolos" data-preco="9.90"
+        data-unidade="/pc">
+        <div class="produto-thumb">🧻</div>
+        <div class="produto-info">
+          <div class="produto-marca">Neve</div>
+          <h4>Papel Higiênico 4 rolos</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 9,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+      <div class="produto-card" data-cat="higiene" data-id="p62" data-nome="Papel Higiênico 4 rolos" data-preco="8.90"
+        data-unidade="/pc">
+        <div class="produto-thumb">🧻</div>
+        <div class="produto-info">
+          <div class="produto-marca">Personal</div>
+          <h4>Papel Higiênico 4 rolos</h4>
+          <div class="cat">Higiene</div>
+          <div class="produto-preco">R$ 8,90</div>
+          <button class="btn-add-carrinho" onclick="addCarrinho(this)">🛒 Adicionar ao Carrinho</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFERTA BANNER -->
+  <div class="oferta-banner">
+    <h2>🎯 OFERTA DA SEMANA</h2>
+    <p>Confira nossas promoções especiais visitando a loja ou ligando para nós!</p>
+    <a class="btn btn-primary" href="contato.html">Ver Contato</a>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast">✅ Produto adicionado ao carrinho!</div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>🛒 MERCADO GAMA</h3>
+        <p>Dia a Dia Com Você!<br>Qualidade e carinho em cada produto. Servindo Taboão da Serra com orgulho e dedicação.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="historia.html">Nossa História</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html">Açougue</a></li>
+          <li><a href="produtos.html">Hortifruti</a></li>
+          <li><a href="produtos.html">Padaria</a></li>
+          <li><a href="produtos.html">Bebidas</a></li>
+          <li><a href="produtos.html">Limpeza</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Mercado Família Gama – Taboão da Serra/SP</span>
+      <div class="social-links">
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="WhatsApp">💬</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
 </body>
+
 </html>
