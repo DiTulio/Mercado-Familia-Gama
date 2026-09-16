@@ -606,7 +606,7 @@ def seed_demo():
     count = db.execute("SELECT COUNT(*) FROM produtos").fetchone()[0]
     db.close()
     if count == 0:
-        from seed import seed
+        from py.seed import seed
         seed(DATABASE)
     else:
         print(f"ℹ️  Banco já populado ({count} produtos). Seed ignorado.")
